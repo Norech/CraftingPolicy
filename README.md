@@ -1,1 +1,7 @@
-SpigotTestPlugin_1.13
+# CraftingPolicy
+Create policies that must be accepted by your players
+
+
+
+
+
