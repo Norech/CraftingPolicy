@@ -1,0 +1,10 @@
+name: CraftingPolicy
+version: 1.0.1
+author: Norech
+main: com.norech.craftingpolicy.Main
+
+commands:
+   policy:
+      description: Main command
+      usage: "Usage: /policy <show/accept/deny> [player]"
+      permission: craftingpolicy.command.use
