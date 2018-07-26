@@ -21,7 +21,9 @@ public class PlayerStorage {
     }
 
     public void put(String path, Object value) {
-        data.createSection(path);
+        if(!data.isConfigurationSection(path)) {
+            data.createSection(path);
+        }
         data.set(path, value);
     }
 
@@ -34,7 +36,7 @@ public class PlayerStorage {
     }
 
     public void save() {
-        if (!dataFile.exists()) {
+        if (dataFile.exists()) {
             try {
                 data.save(dataFile);
             } catch (IOException exception) {
