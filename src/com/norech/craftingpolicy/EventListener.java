@@ -14,13 +14,9 @@ public class EventListener implements Listener
     private Main plugin;
     private FileConfiguration config;
 
-    private CommandPolicy privacyPolicyCommand;
-
     EventListener(Main plugin) {
         this.plugin = plugin;
         this.config = plugin.getConfig();
-
-        this.privacyPolicyCommand = (CommandPolicy)( plugin.getCommand("privacy-policy").getExecutor() );
     }
 
     @EventHandler

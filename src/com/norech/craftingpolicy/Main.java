@@ -77,9 +77,11 @@ public class Main extends JavaPlugin {
     }
 
     public PlayerData getPlayerData(Player player) {
-        PlayerData playerData = playersData.get(player);
+        PlayerData playerData;
 
-        if(playerData == null) {
+        if(playersData.containsValue(player)) {
+            playerData = playersData.get(player);
+        } else {
             playerData = new PlayerData(this, player);
             playersData.put(player, playerData);
         }
