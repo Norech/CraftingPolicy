@@ -6,8 +6,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Main extends JavaPlugin {
     private FileConfiguration config;
@@ -40,9 +41,10 @@ public class Main extends JavaPlugin {
         config.addDefault("translations.acceptButton", "Accept");
         config.addDefault("translations.denyButton", "Deny");
 
-        config.addDefault("book.pages",
-                Arrays.asList( "§6§lPolicy\n\n§rThis is a simple\n§rpolicy example.\n\n§lEdit it in plugin\n§lconfiguration file.", "§7You can have multiple\n§7pages, like a regular\n§7book." )
-        );
+        List<String> defaultPages = new ArrayList<>();
+        defaultPages.add("§6§lPolicy\n\n§rThis is a simple\n§rpolicy example.\n\n§lEdit it in plugin\n§lconfiguration file.");
+        defaultPages.add("§7You can have multiple\n§7pages, like a regular\n§7book.");
+        config.addDefault("book.pages", defaultPages);
 
         config.addDefault("book.allowManualClose", false);
         config.addDefault("book.kickOnPolicyDeny", true);
